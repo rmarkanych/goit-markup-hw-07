@@ -5,6 +5,7 @@
   --title-color: #212121;
   --logo-color: #000000;
   --primary-blue-color: #2196f3;
+  --hover-button-color: #188ce8;
   --primary-button-color: #f5f4fa;
   --footer-bg-color: #2f303a;
   --primary-bg-color: #e5e5e5;
@@ -42,6 +43,9 @@ input {
   display: flex;
   cursor: pointer;
 }
+button {
+  cursor: pointer;
+}
 .link {
   text-decoration: none;
   color: currentColor;
@@ -65,6 +69,18 @@ input {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-color);
+}
+.button {
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
 }
 .visually-hidden {
   position: absolute;
@@ -100,7 +116,6 @@ input {
 .header__logo--primary {
   color: var(--logo-color);
 }
-
 .navigation__list {
   display: flex;
   margin-left: 93px;
@@ -126,7 +141,7 @@ input {
   color: var(--primary-blue-color);
 }
 .navigation__link--current {
-  color: #2196f3;
+  color: var(--primary-blue-color);
 }
 .navigation__link--current::after {
   content: '';
@@ -137,7 +152,6 @@ input {
   border-radius: 2px;
   border-bottom: 4px solid var(--primary-blue-color);
 }
-
 .header-contacts {
   display: flex;
   margin-left: auto;
@@ -203,25 +217,15 @@ input {
   text-align: center;
 }
 .hero__button {
-  width: 200px;
-  height: 50px;
-  border-radius: 4px;
-  border: none;
-  font-weight: 700;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.87;
-  text-align: center;
-  letter-spacing: 0.06em;
-  cursor: pointer;
   background-color: var(--primary-blue-color);
   color: var(--primary-white-color);
   transition: background-color var(--animation);
 }
 .hero__button:hover,
 .hero__button:focus {
-  background-color: #188ce8;
+  background-color: var(--hover-button-color);
 }
+
 /*********MODAL*********/
 
 .backdrop {
@@ -256,20 +260,18 @@ input {
   border-radius: 4px;
   transition: transform var(--animation);
 }
-
 .button-close {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
   width: 30px;
   height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: fill var(--animation);
 }
 .button-close:hover,
@@ -286,29 +288,19 @@ input {
   color: var(--title-color);
 }
 .modal__button {
-  text-align: center;
   margin: 0 auto;
   margin-top: 30px;
-  background-color: var(--primary-blue-color);
-  color: var(--primary-white-color);
   display: flex;
   justify-content: center;
-  height: 50px;
-  width: 200px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 2.14;
   align-items: center;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color var(--animation);
 }
 .modal__button:hover,
 .modal__button:focus {
-  background-color: #188ce8;
+  background-color: var(--hover-button-color);
 }
 .modal__wrapper {
   margin-bottom: 10px;
@@ -328,7 +320,6 @@ input {
   transition: border-color var(--animation);
   border-radius: 4px;
 }
-
 .modal__label {
   font-size: 12px;
   position: relative;
@@ -339,12 +330,10 @@ input {
   cursor: pointer;
   color: var(--primary-description-color);
 }
-
 .modal__field {
   position: relative;
   width: 100%;
 }
-
 .modal__icon {
   position: absolute;
   display: flex;
@@ -361,7 +350,6 @@ input {
 .modal__input:focus + .modal__icon {
   fill: var(--primary-blue-color);
 }
-
 .modal-comment__textarea {
   min-height: 120px;
   margin-top: 4px;
@@ -409,7 +397,7 @@ input {
   width: 16px;
   height: 15px;
   border-radius: 2px;
-  outline: 2px solid #212121;
+  outline: 2px solid var(--title-color);
   margin-right: 7px;
   cursor: pointer;
   outline-offset: -2px;
@@ -423,7 +411,7 @@ input {
   outline-color: var(--primary-blue-color);
   border: none;
 }
-.modal-agreement__checkbox:checked + .modal-agreement__wrapper > .modal-agreement__icon {
+.modal-agreement__checkbox:checked + .modal-agreement__border > .modal-agreement__icon {
   fill: var(--primary-white-color);
 }
 
@@ -446,7 +434,6 @@ input {
   background-color: var(--primary-button-color);
   border-radius: 4px;
 }
-
 .features__title {
   margin-bottom: 10px;
   font-size: 14px;
@@ -612,18 +599,17 @@ input {
   margin-right: 8px;
 }
 .portfolio-button__btn {
-  background-color: var(--primary-button-color);
-  color: var(--title-color);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.03em;
-  cursor: pointer;
   padding: 6px 22px;
   border: none;
   border-radius: 4px;
+  background-color: var(--primary-button-color);
+  color: var(--title-color);
   transition: color var(--animation), background-color var(--animation), box-shadow var(--animation);
 }
 .portfolio-button__btn:focus,
@@ -633,7 +619,6 @@ input {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-
 .projects {
   flex-wrap: wrap;
   display: flex;
@@ -666,14 +651,12 @@ input {
   top: 0;
   opacity: 0;
   padding: 63px 24px;
-
   font-size: 18px;
   line-height: 1.55;
   vertical-align: top;
   letter-spacing: 0.03em;
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--primary-white-color);
-
   transform: translateY(100%);
   transition: transform var(--animation), opacity var(--animation);
 }
@@ -758,7 +741,6 @@ input {
 .footer-contacts__link:hover {
   color: var(--primary-blue-color);
 }
-
 .footer-social__description {
   margin-bottom: 20px;
   font-weight: 700;
@@ -766,7 +748,6 @@ input {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
   color: var(--primary-white-color);
 }
 .footer-social__list {
@@ -824,22 +805,12 @@ input {
 .footer-right__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-
 .footer-right__button {
-  background-color: var(--primary-blue-color);
-  color: var(--primary-white-color);
   display: flex;
   justify-content: center;
-  height: 50px;
-  width: 200px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 2.14;
   align-items: center;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .footer-right__icon {
