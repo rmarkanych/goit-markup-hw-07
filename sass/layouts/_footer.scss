@@ -23,13 +23,12 @@
   padding-bottom: 0;
   margin-bottom: 20px;
   display: block;
+  &--secondary {
+      color: var(--primary-white-color);
+    }
 }
 
-.footer__logo--secondary {
-  color: var(--primary-white-color);
-}
-
-.footer-address__list .footer-address__link {
+.footer-address__link {
   display: block;
   margin-bottom: 9px;
   font-style: normal;
@@ -37,28 +36,26 @@
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
   transition: color var(--animation);
+  &:focus,
+    &:hover {
+      color: var(--primary-blue-color);
+    }
 }
 
-.footer-address__link:focus,
-.footer-address__link:hover {
-  color: var(--primary-blue-color);
-}
 
+.footer-contacts__item:not(:last-child) {
+  margin-bottom: 9px;
+}
 .footer-contacts__link {
   font-style: normal;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   transition: color var(--animation);
-}
-
-.footer-contacts__item:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-.footer-contacts__link:focus,
-.footer-contacts__link:hover {
-  color: var(--primary-blue-color);
+  &:focus,
+    &:hover {
+      color: var(--primary-blue-color);
+    }
 }
 
 .footer-social__description {
@@ -83,10 +80,10 @@
   justify-content: center;
   height: 44px;
   width: 44px;
-}
 
-.footer-social__item:last-child {
-  margin-right: 0;
+&:last-child {
+    margin-right: 0;
+  }
 }
 
 .footer-social__link {
@@ -99,19 +96,19 @@
   align-items: center;
   justify-content: center;
   transition: fill var(--animation), color var(--animation), background-color var(--animation);
+  &:hover,
+    &:focus {
+      fill: var(--primary-white-color);
+      color: var(--primary-white-color);
+      background-color: var(--primary-blue-color);
+      border-radius: 50%;
+    }
 }
 
 .footer-social__icon {
   fill: currentColor;
 }
 
-.footer-social__link:hover,
-.footer-social__link:focus {
-  fill: var(--primary-white-color);
-  color: var(--primary-white-color);
-  background-color: var(--primary-blue-color);
-  border-radius: 50%;
-}
 
 .footer-right__subscription {
   display: flex;
@@ -130,10 +127,9 @@
   padding-left: 16px;
   outline: none;
   color: var(--primary-white-color);
-}
-
-.footer-right__input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
 }
 
 .footer-right__button {
